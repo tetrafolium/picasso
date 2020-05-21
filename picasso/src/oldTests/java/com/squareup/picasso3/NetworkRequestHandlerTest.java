@@ -156,9 +156,12 @@ public class NetworkRequestHandlerTest {
   @Test public void unknownContentLengthFromDiskThrows() throws Exception {
     final AtomicBoolean closed = new AtomicBoolean();
     ResponseBody body = new ResponseBody() {
-      @Override public MediaType contentType() { return null; }
-      @Override public long contentLength() { return 0; }
-      @Override public BufferedSource source() { return new Buffer(); }
+      @Override public MediaType contentType() {
+          return null; }
+      @Override public long contentLength() {
+          return 0; }
+      @Override public BufferedSource source() {
+          return new Buffer(); }
       @Override public void close() {
         closed.set(true);
         super.close();
