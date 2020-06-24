@@ -359,11 +359,9 @@ class Dispatcher {
   void performComplete(BitmapHunter hunter) {
     if (shouldWriteToMemoryCache(hunter.data.memoryPolicy)) {
       Result result = hunter.getResult();
-      if (result != null) {
-        if (result instanceof Result.Bitmap) {
-          Bitmap bitmap = ((Result.Bitmap)result).getBitmap();
-          cache.set(hunter.getKey(), bitmap);
-        }
+      if ((result != null) && (result instanceof Result.Bitmap)) {
+        Bitmap bitmap = ((Result.Bitmap)result).getBitmap();
+        cache.set(hunter.getKey(), bitmap);
       }
     }
     hunterMap.remove(hunter.getKey());
@@ -427,11 +425,9 @@ class Dispatcher {
       return;
     }
     Result result = hunter.getResult();
-    if (result != null) {
-      if (result instanceof Result.Bitmap) {
-        Bitmap bitmap = ((Result.Bitmap)result).getBitmap();
-        bitmap.prepareToDraw();
-      }
+    if ((result != null) && (result instanceof Result.Bitmap)) {
+      Bitmap bitmap = ((Result.Bitmap)result).getBitmap();
+      bitmap.prepareToDraw();
     }
 
     Message message = mainThreadHandler.obtainMessage(HUNTER_COMPLETE, hunter);
