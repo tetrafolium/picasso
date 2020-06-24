@@ -11,29 +11,32 @@ import org.robolectric.annotation.Implements;
 
 final class Shadows {
 
-  @Implements(MediaStore.Video.Thumbnails.class)
-  public static class ShadowVideoThumbnails {
+@Implements(MediaStore.Video.Thumbnails.class)
+public static class ShadowVideoThumbnails {
 
-    @Implementation
-    public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
-                                      BitmapFactory.Options options) {
-      return makeBitmap();
-    }
+@Implementation
+public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
+                                  BitmapFactory.Options options) {
+	return makeBitmap();
+}
 
-    private ShadowVideoThumbnails() {}
-  }
+private ShadowVideoThumbnails() {
+}
+}
 
-  @Implements(MediaStore.Images.Thumbnails.class)
-  public static class ShadowImageThumbnails {
+@Implements(MediaStore.Images.Thumbnails.class)
+public static class ShadowImageThumbnails {
 
-    @Implementation
-    public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
-                                      BitmapFactory.Options options) {
-      return makeBitmap(20, 20);
-    }
+@Implementation
+public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
+                                  BitmapFactory.Options options) {
+	return makeBitmap(20, 20);
+}
 
-    private ShadowImageThumbnails() {}
-  }
+private ShadowImageThumbnails() {
+}
+}
 
-  private Shadows() {}
+private Shadows() {
+}
 }

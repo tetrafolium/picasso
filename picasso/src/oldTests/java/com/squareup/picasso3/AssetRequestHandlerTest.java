@@ -14,19 +14,19 @@ import org.robolectric.RobolectricTestRunner;
 
 @RunWith(RobolectricTestRunner.class)
 public class AssetRequestHandlerTest {
-  @Mock Context context;
+@Mock Context context;
 
-  @Before
-  public void setUp() {
-    initMocks(this);
-  }
+@Before
+public void setUp() {
+	initMocks(this);
+}
 
-  @Test
-  public void truncatesFilePrefix() throws IOException {
-    Uri uri = Uri.parse("file:///android_asset/foo/bar.png");
-    Request request = new Request.Builder(uri).build();
+@Test
+public void truncatesFilePrefix() throws IOException {
+	Uri uri = Uri.parse("file:///android_asset/foo/bar.png");
+	Request request = new Request.Builder(uri).build();
 
-    String actual = AssetRequestHandler.getFilePath(request);
-    assertThat(actual).isEqualTo("foo/bar.png");
-  }
+	String actual = AssetRequestHandler.getFilePath(request);
+	assertThat(actual).isEqualTo("foo/bar.png");
+}
 }
