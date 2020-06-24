@@ -22,13 +22,13 @@ import androidx.annotation.DrawableRes
 import com.squareup.picasso3.RequestHandler.Result
 
 internal class ImageViewAction(
-  picasso: Picasso,
-  val target: ImageView,
-  data: Request,
-  val errorDrawable: Drawable?,
-  @DrawableRes val errorResId: Int,
-  val noFade: Boolean,
-  var callback: Callback?
+    picasso: Picasso,
+    val target: ImageView,
+    data: Request,
+    val errorDrawable: Drawable?,
+    @DrawableRes val errorResId: Int,
+    val noFade: Boolean,
+    var callback: Callback?
 ) : Action(picasso, data) {
   override fun complete(result: Result) {
     PicassoDrawable.setResult(target, picasso.context, result, noFade, picasso.indicatorsEnabled)

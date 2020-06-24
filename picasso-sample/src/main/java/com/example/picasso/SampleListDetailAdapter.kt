@@ -14,9 +14,9 @@ internal class SampleListDetailAdapter(private val context: Context) : BaseAdapt
   private val urls = Data.URLS.toList()
 
   override fun getView(
-    position: Int,
-    view: View?,
-    parent: ViewGroup
+      position: Int,
+      view: View?,
+      parent: ViewGroup
   ): View {
     val newView: View
     val holder: ViewHolder
@@ -56,7 +56,7 @@ internal class SampleListDetailAdapter(private val context: Context) : BaseAdapt
   override fun getItemId(position: Int): Long = position.toLong()
 
   internal class ViewHolder(
-    val image: ImageView,
-    val text: TextView
+      val image: ImageView,
+      val text: TextView
   )
 }

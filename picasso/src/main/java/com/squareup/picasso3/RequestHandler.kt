@@ -43,25 +43,25 @@ abstract class RequestHandler {
    * @see [load]
    */
   sealed class Result constructor(
-    /**
-     * Returns the resulting [Picasso.LoadedFrom] generated from a [load] call.
-     */
-    @JvmField val loadedFrom: LoadedFrom,
-    /**
-     * Returns the resulting EXIF rotation generated from a [load] call.
-     */
-    @JvmField val exifRotation: Int = 0
+      /**  
+       * Returns the resulting [Picasso.LoadedFrom] generated from a [load] call.  
+       */  
+      @JvmField val loadedFrom: LoadedFrom,
+      /**  
+       * Returns the resulting EXIF rotation generated from a [load] call.  
+       */  
+      @JvmField val exifRotation: Int = 0
   ) {
     class Bitmap @JvmOverloads constructor(
-      val bitmap: android.graphics.Bitmap,
-      loadedFrom: LoadedFrom,
-      exifRotation: Int = 0
+        val bitmap: android.graphics.Bitmap,
+        loadedFrom: LoadedFrom,
+        exifRotation: Int = 0
     ) : Result(loadedFrom, exifRotation)
 
     class Drawable @JvmOverloads constructor(
-      val drawable: android.graphics.drawable.Drawable,
-      loadedFrom: LoadedFrom,
-      exifRotation: Int = 0
+        val drawable: android.graphics.drawable.Drawable,
+        loadedFrom: LoadedFrom,
+        exifRotation: Int = 0
     ) : Result(loadedFrom, exifRotation)
   }
 
@@ -81,16 +81,16 @@ abstract class RequestHandler {
    */
   @Throws(IOException::class)
   abstract fun load(
-    picasso: Picasso,
-    request: Request,
-    callback: Callback
+      picasso: Picasso,
+      request: Request,
+      callback: Callback
   )
 
   open val retryCount = 0
 
   open fun shouldRetry(
-    airplaneMode: Boolean,
-    info: NetworkInfo?
+      airplaneMode: Boolean,
+      info: NetworkInfo?
   ) = false
 
   open fun supportsReplay() = false

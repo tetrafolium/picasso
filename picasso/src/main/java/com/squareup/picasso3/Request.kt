@@ -304,9 +304,9 @@ class Request internal constructor(builder: Builder) {
     }
 
     internal constructor(
-      uri: Uri?,
-      resourceId: Int,
-      bitmapConfig: Config?
+        uri: Uri?,
+        resourceId: Int,
+        bitmapConfig: Config?
     ) {
       this.uri = uri
       this.resourceId = resourceId
@@ -466,9 +466,9 @@ class Request internal constructor(builder: Builder) {
 
     /** Rotate the image by the specified degrees around a pivot point.  */
     fun rotate(
-      degrees: Float,
-      pivotX: Float,
-      pivotY: Float
+        degrees: Float,
+        pivotX: Float,
+        pivotY: Float
     ) = apply {
       rotationDegrees = degrees
       rotationPivotX = pivotX
@@ -529,8 +529,8 @@ class Request internal constructor(builder: Builder) {
      * options using the varargs parameter.
      */
     fun memoryPolicy(
-      policy: MemoryPolicy,
-      vararg additional: MemoryPolicy
+        policy: MemoryPolicy,
+        vararg additional: MemoryPolicy
     ) = apply {
       memoryPolicy = memoryPolicy or policy.index
 
@@ -544,8 +544,8 @@ class Request internal constructor(builder: Builder) {
      * policy options using the varargs parameter.
      */
     fun networkPolicy(
-      policy: NetworkPolicy,
-      vararg additional: NetworkPolicy
+        policy: NetworkPolicy,
+        vararg additional: NetworkPolicy
     ) = apply {
       networkPolicy = networkPolicy or policy.index
 

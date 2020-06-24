@@ -14,31 +14,31 @@ class PicassoContentProvider : ContentProvider() {
   }
 
   override fun query(
-    uri: Uri,
-    projection: Array<String>?,
-    selection: String?,
-    selectionArgs: Array<String>?,
-    sortOrder: String?
+      uri: Uri,
+      projection: Array<String>?,
+      selection: String?,
+      selectionArgs: Array<String>?,
+      sortOrder: String?
   ) = null
 
   override fun getType(uri: Uri) = null
 
   override fun insert(
-    uri: Uri,
-    values: ContentValues?
+      uri: Uri,
+      values: ContentValues?
   ) = null
 
   override fun delete(
-    uri: Uri,
-    selection: String?,
-    selectionArgs: Array<String>?
+      uri: Uri,
+      selection: String?,
+      selectionArgs: Array<String>?
   ) = 0
 
   override fun update(
-    uri: Uri,
-    values: ContentValues?,
-    selection: String?,
-    selectionArgs: Array<String>?
+      uri: Uri,
+      values: ContentValues?,
+      selection: String?,
+      selectionArgs: Array<String>?
   ) = 0
 
   companion object {

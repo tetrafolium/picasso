@@ -20,9 +20,9 @@ internal class SampleGridViewAdapter(private val context: Context) : BaseAdapter
   }
 
   override fun getView(
-    position: Int,
-    convertView: View?,
-    parent: ViewGroup
+      position: Int,
+      convertView: View?,
+      parent: ViewGroup
   ): View {
     val view = convertView as? SquaredImageView ?: SquaredImageView(context).apply {
       scaleType = CENTER_CROP

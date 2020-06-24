@@ -23,10 +23,10 @@ import android.provider.ContactsContract
 import android.provider.ContactsContract.Contacts
 import com.squareup.picasso3.BitmapUtils.decodeStream
 import com.squareup.picasso3.Picasso.LoadedFrom.DISK
-import okio.Source
-import okio.source
 import java.io.FileNotFoundException
 import java.io.IOException
+import okio.Source
+import okio.source
 
 internal class ContactsPhotoRequestHandler(private val context: Context) : RequestHandler() {
   companion object {
@@ -53,16 +53,16 @@ internal class ContactsPhotoRequestHandler(private val context: Context) : Reque
 
   override fun canHandleRequest(data: Request): Boolean {
     val uri = data.uri
-    return uri != null
-        && ContentResolver.SCHEME_CONTENT == uri.scheme
-        && Contacts.CONTENT_URI.host == uri.host
-        && matcher.match(data.uri) != UriMatcher.NO_MATCH
+    return uri != null &&
+        ContentResolver.SCHEME_CONTENT == uri.scheme &&
+        Contacts.CONTENT_URI.host == uri.host &&
+        matcher.match(data.uri) != UriMatcher.NO_MATCH
   }
 
   override fun load(
-    picasso: Picasso,
-    request: Request,
-    callback: Callback
+      picasso: Picasso,
+      request: Request,
+      callback: Callback
   ) {
     var signaledCallback = false
     try {

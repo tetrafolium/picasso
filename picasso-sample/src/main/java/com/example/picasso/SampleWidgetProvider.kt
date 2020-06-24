@@ -25,9 +25,9 @@ import java.util.Random
 class SampleWidgetProvider : AppWidgetProvider() {
 
   override fun onUpdate(
-    context: Context,
-    appWidgetManager: AppWidgetManager,
-    appWidgetIds: IntArray
+      context: Context,
+      appWidgetManager: AppWidgetManager,
+      appWidgetIds: IntArray
   ) {
     val updateViews = RemoteViews(context.packageName, R.layout.sample_widget)
 

@@ -23,14 +23,13 @@ import com.squareup.picasso3.Picasso.LoadedFrom.DISK
 
 internal class ResourceRequestHandler(private val context: Context) : RequestHandler() {
   override fun canHandleRequest(data: Request): Boolean {
-    return if (data.resourceId != 0 && !isXmlResource(context.resources, data.resourceId)) { true }
-    else data.uri != null && ContentResolver.SCHEME_ANDROID_RESOURCE == data.uri.scheme
+    return if (data.resourceId != 0 && !isXmlResource(context.resources, data.resourceId)) { true } else data.uri != null && ContentResolver.SCHEME_ANDROID_RESOURCE == data.uri.scheme
   }
 
   override fun load(
-    picasso: Picasso,
-    request: Request,
-    callback: Callback
+      picasso: Picasso,
+      request: Request,
+      callback: Callback
   ) {
     var signaledCallback = false
     try {

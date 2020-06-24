@@ -35,8 +35,8 @@ interface BitmapTarget {
    * **Note:** You must not recycle the bitmap.
    */
   fun onBitmapLoaded(
-    bitmap: Bitmap,
-    from: LoadedFrom
+      bitmap: Bitmap,
+      from: LoadedFrom
   )
 
   /**
@@ -46,8 +46,8 @@ interface BitmapTarget {
    * specified via [RequestCreator.error] or [RequestCreator.error].
    */
   fun onBitmapFailed(
-    e: Exception,
-    errorDrawable: Drawable?
+      e: Exception,
+      errorDrawable: Drawable?
   )
 
   /**

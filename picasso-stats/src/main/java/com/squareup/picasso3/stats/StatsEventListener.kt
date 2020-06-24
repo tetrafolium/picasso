@@ -20,10 +20,10 @@ import android.util.Log
 import androidx.core.graphics.BitmapCompat
 import com.squareup.picasso3.EventListener
 import com.squareup.picasso3.Picasso
-import okio.Buffer
-import okio.BufferedSink
 import java.io.IOException
 import kotlin.math.ceil
+import okio.Buffer
+import okio.BufferedSink
 
 class StatsEventListener : EventListener {
   private var maxCacheSize = 0
@@ -89,25 +89,25 @@ class StatsEventListener : EventListener {
   )
 
   private fun average(
-    count: Int,
-    totalSize: Long
+      count: Int,
+      totalSize: Long
   ): Double = totalSize * 1.0 / count
 
   data class Snapshot(
-    val maxSize: Int,
-    val size: Int,
-    val cacheHits: Long,
-    val cacheMisses: Long,
-    val totalDownloadSize: Long,
-    val totalOriginalBitmapSize: Long,
-    val totalTransformedBitmapSize: Long,
-    val averageDownloadSize: Double,
-    val averageOriginalBitmapSize: Double,
-    val averageTransformedBitmapSize: Double,
-    val downloadCount: Int,
-    val originalBitmapCount: Int,
-    val transformedBitmapCount: Int,
-    val timeStamp: Long
+      val maxSize: Int,
+      val size: Int,
+      val cacheHits: Long,
+      val cacheMisses: Long,
+      val totalDownloadSize: Long,
+      val totalOriginalBitmapSize: Long,
+      val totalTransformedBitmapSize: Long,
+      val averageDownloadSize: Double,
+      val averageOriginalBitmapSize: Double,
+      val averageTransformedBitmapSize: Double,
+      val downloadCount: Int,
+      val originalBitmapCount: Int,
+      val transformedBitmapCount: Int,
+      val timeStamp: Long
   ) {
     /** Prints out this [Snapshot] into log.  */
     fun dump() {

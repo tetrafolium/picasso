@@ -26,16 +26,16 @@ internal class PlatformLruCache(maxByteCount: Int) {
   val cache =
     object : LruCache<String, BitmapAndSize>(if (maxByteCount != 0) maxByteCount else 1) {
       override fun sizeOf(
-        key: String,
-        value: BitmapAndSize
+          key: String,
+          value: BitmapAndSize
       ): Int = value.byteCount
     }
 
   operator fun get(key: String): Bitmap? = cache[key]?.bitmap
 
   operator fun set(
-    key: String,
-    bitmap: Bitmap
+      key: String,
+      bitmap: Bitmap
   ) {
     val byteCount = BitmapCompat.getAllocationByteCount(bitmap)
     // If the bitmap is too big for the cache, don't even attempt to store it. Doing so will cause
@@ -80,7 +80,7 @@ internal class PlatformLruCache(maxByteCount: Int) {
   fun evictionCount(): Int = cache.evictionCount()
 
   internal class BitmapAndSize(
-    val bitmap: Bitmap,
-    val byteCount: Int
+      val bitmap: Bitmap,
+      val byteCount: Int
   )
 }

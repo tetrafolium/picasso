@@ -42,9 +42,9 @@ class SampleGalleryActivity : PicassoSampleActivity() {
   }
 
   override fun onActivityResult(
-    requestCode: Int,
-    resultCode: Int,
-    data: Intent?
+      requestCode: Int,
+      resultCode: Int,
+      data: Intent?
   ) {
     if (requestCode == GALLERY_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
       image = data.data.toString()

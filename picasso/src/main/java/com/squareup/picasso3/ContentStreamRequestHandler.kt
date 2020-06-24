@@ -22,19 +22,19 @@ import androidx.exifinterface.media.ExifInterface
 import androidx.exifinterface.media.ExifInterface.ORIENTATION_NORMAL
 import androidx.exifinterface.media.ExifInterface.TAG_ORIENTATION
 import com.squareup.picasso3.Picasso.LoadedFrom.DISK
-import okio.Source
-import okio.source
 import java.io.FileNotFoundException
 import java.io.IOException
+import okio.Source
+import okio.source
 
 internal open class ContentStreamRequestHandler(@JvmField val context: Context) : RequestHandler() {
   override fun canHandleRequest(data: Request): Boolean =
     ContentResolver.SCHEME_CONTENT == data.uri?.scheme ?: false
 
   override fun load(
-    picasso: Picasso,
-    request: Request,
-    callback: Callback
+      picasso: Picasso,
+      request: Request,
+      callback: Callback
   ) {
 
     var signaledCallback = false

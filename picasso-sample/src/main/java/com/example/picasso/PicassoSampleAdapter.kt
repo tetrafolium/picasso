@@ -20,8 +20,8 @@ import java.util.Random
 
 internal class PicassoSampleAdapter(context: Context?) : BaseAdapter() {
   internal enum class Sample(
-    val label: String,
-    private val activityClass: Class<out Activity>?
+      val label: String,
+      private val activityClass: Class<out Activity>?
   ) {
     GRID_VIEW("Image Grid View", SampleGridViewActivity::class.java),
     GALLERY("Load from Gallery", SampleGalleryActivity::class.java),
@@ -70,7 +70,6 @@ internal class PicassoSampleAdapter(context: Context?) : BaseAdapter() {
       activity.startActivity(Intent(activity, activityClass))
       activity.finish()
     }
-
   }
 
   private val inflater: LayoutInflater = LayoutInflater.from(context)
@@ -82,9 +81,9 @@ internal class PicassoSampleAdapter(context: Context?) : BaseAdapter() {
   override fun getItemId(position: Int): Long = position.toLong()
 
   override fun getView(
-    position: Int,
-    convertView: View?,
-    parent: ViewGroup
+      position: Int,
+      convertView: View?,
+      parent: ViewGroup
   ): View {
     val view = if (convertView == null) {
       inflater.inflate(R.layout.picasso_sample_activity_item, parent, false) as TextView

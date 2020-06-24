@@ -37,11 +37,11 @@ import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference
 
 internal class BitmapHunter(
-  @JvmField val picasso: Picasso,
-  private val dispatcher: Dispatcher,
-  private val cache: PlatformLruCache,
-  private val requestHandler: RequestHandler,
-  action: Action
+    @JvmField val picasso: Picasso,
+    private val dispatcher: Dispatcher,
+    private val cache: PlatformLruCache,
+    private val requestHandler: RequestHandler,
+    action: Action
 ) : Runnable {
   @JvmField val sequence: Int = SEQUENCE_GENERATOR.incrementAndGet()
   @JvmField var priority: Picasso.Priority = action.request.priority
@@ -269,10 +269,10 @@ internal class BitmapHunter(
     }
 
     @JvmStatic fun forRequest(
-      picasso: Picasso,
-      dispatcher: Dispatcher,
-      cache: PlatformLruCache,
-      action: Action
+        picasso: Picasso,
+        dispatcher: Dispatcher,
+        cache: PlatformLruCache,
+        action: Action
     ): BitmapHunter {
       val request = action.request
       val requestHandlers = picasso.getRequestHandlers()
@@ -299,10 +299,10 @@ internal class BitmapHunter(
     }
 
     fun applyTransformations(
-      picasso: Picasso,
-      data: Request,
-      transformations: List<Transformation>,
-      result: Bitmap
+        picasso: Picasso,
+        data: Request,
+        transformations: List<Transformation>,
+        result: Bitmap
     ): Bitmap? {
       var res = result
 

@@ -57,9 +57,9 @@ class SampleContactsActivity : PicassoSampleActivity(), LoaderCallbacks<Cursor> 
   }
 
   override fun onRequestPermissionsResult(
-    requestCode: Int,
-    permissions: Array<String>,
-    grantResults: IntArray
+      requestCode: Int,
+      permissions: Array<String>,
+      grantResults: IntArray
   ) {
     if (requestCode == REQUEST_READ_CONTACTS) {
       if (grantResults.isNotEmpty() && grantResults[0] == PERMISSION_GRANTED) {
@@ -76,8 +76,8 @@ class SampleContactsActivity : PicassoSampleActivity(), LoaderCallbacks<Cursor> 
   }
 
   override fun onCreateLoader(
-    id: Int,
-    args: Bundle?
+      id: Int,
+      args: Bundle?
   ): Loader<Cursor> {
     return if (id == ContactsQuery.QUERY_ID) {
       CursorLoader(
@@ -92,8 +92,8 @@ class SampleContactsActivity : PicassoSampleActivity(), LoaderCallbacks<Cursor> 
   }
 
   override fun onLoadFinished(
-    loader: Loader<Cursor>,
-    data: Cursor
+      loader: Loader<Cursor>,
+      data: Cursor
   ) {
     adapter.swapCursor(data)
   }

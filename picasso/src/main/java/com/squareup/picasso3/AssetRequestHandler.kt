@@ -35,9 +35,9 @@ internal class AssetRequestHandler(private val context: Context) : RequestHandle
   }
 
   override fun load(
-    picasso: Picasso,
-    request: Request,
-    callback: Callback
+      picasso: Picasso,
+      request: Request,
+      callback: Callback
   ) {
     initializeIfFirstTime()
     var signaledCallback = false

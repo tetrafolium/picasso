@@ -33,9 +33,9 @@ class SampleListDetailActivity : PicassoSampleActivity() {
 
   class ListFragment : Fragment() {
     override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
       val activity = activity as SampleListDetailActivity
       val adapter = SampleListDetailAdapter(activity)
@@ -61,9 +61,9 @@ class SampleListDetailActivity : PicassoSampleActivity() {
 
   class DetailFragment : Fragment() {
     override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
       val activity = activity as SampleListDetailActivity
       val view = LayoutInflater.from(activity)
